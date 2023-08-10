@@ -1,0 +1,28 @@
+@import url("https://rsms.me/inter/inter.css");
+@import 'prism.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        font-family: "Inter", sans-serif;
+    }
+    @supports (font-variation-settings: normal) {
+        :root {
+            font-family: "Inter var", sans-serif;
+        }
+    }
+}
+
+*{
+  color-scheme: dark;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
