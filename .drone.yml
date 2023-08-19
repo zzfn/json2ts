@@ -50,7 +50,7 @@ steps:
         from_secret: nexus_docker_username
       password:
         from_secret: nexus_docker_password
-      repo: hub.ccw.es/home/blog
+      repo: hub.ccw.es/home/json2ts
       tags:
         - ${DRONE_COMMIT_SHA:0:8}
         - latest
@@ -84,4 +84,4 @@ steps:
       command_timeout: 2m
       script:
         - kubectl apply -f https://git.ccw.es/ccw/yaml/raw/branch/master/json2ts.yaml
-        - kubectl set image deployment/blog blog=hub.ccw.es/home/json2ts:${DRONE_COMMIT_SHA:0:8}
+        - kubectl set image deployment/json2ts-deployment json2ts=hub.ccw.es/home/json2ts:${DRONE_COMMIT_SHA:0:8}
